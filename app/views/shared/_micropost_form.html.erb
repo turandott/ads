@@ -1,0 +1,18 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= form_with model: @message, local: true do |f| %>
+<!--      <%#= form.text_field :title, placeholder: "Title" %><br>-->
+<!--      <%#= form.text_area :content %><br><br>-->
+
+      <%= f.file_field :images, multiple: true %><br>
+      <%= f.submit "Post", class: "btn btn-primary" %>
+      <%#= form.submit %>
+    <% end %>
+<!--    <%# form.file_field :images, multiple: true %><br>-->
+
+    <%#= form.submit  %>
+  </div>
+  <%#= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

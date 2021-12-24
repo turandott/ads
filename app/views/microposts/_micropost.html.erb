@@ -1,0 +1,23 @@
+<li id="micropost-<%= micropost.id %>">
+ 
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+  <span class="content">
+    <%= micropost.content %>
+    <%#= image_tag micropost.image.url if micropost.image? %>
+    <%# if @micropost.images.attached? %>
+<!--      <image src="<%#=(url_for(@micropost.images)) %>"></image>-->
+        <%# end %>
+    <%# @micropost.files.each do |file| %>
+    <%#= link_to file.filename, file %>
+    <%# end %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+
+    <%#= image_tag user.images.variant(resize_to_limit: [100, 100]) %>
+    <% if current_user?(micropost.user) %>
+      <%= button_to "delete", micropost, method: :delete,
+                  data: { confirm: "You sure?" } %>
+      <% end %>
+  </span>
+</li>
