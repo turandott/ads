@@ -21,7 +21,12 @@ gem "stimulus-rails", ">= 0.7.3"
 gem 'cancancan'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder", "~> 2.11"
+gem 'carrierwave'
 
+gem 'mini_magick'
+gem 'activestorage-validator'
+gem "rmagick", :require => 'rmagick'
+gem 'fog'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker6r

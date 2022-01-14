@@ -7,3 +7,6 @@ import "app/javascript/controllers"
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap.min
+
+
+

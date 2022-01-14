@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
-  resources :microposts, only: [:create,:destroy]
+  resources :microposts do
+    resources :micropost_image, only:[:create, :destroy]
+  end
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

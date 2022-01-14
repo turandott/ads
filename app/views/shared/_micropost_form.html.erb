@@ -2,12 +2,25 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
-    <%= form_with model: @message, local: true do |f| %>
+    <%#= form_with model: @message, local: true do |f| %>
 <!--      <%#= form.text_field :title, placeholder: "Title" %><br>-->
 <!--      <%#= form.text_area :content %><br><br>-->
 
-      <%= f.file_field :images, multiple: true %><br>
-      <%= f.submit "Post", class: "btn btn-primary" %>
+<!--      <%#= f.file_field :images, multiple: true %><br>-->
+      <div class="form-group">
+        <label class="btn btn-default">Add images<span style="display:none;">
+           <%= f.file_field :images, multiple: true, accept: 'image/jpeg,image/gif,image/png', id: "files" %></span></label>
+      </div>
+
+      <div class="image-box">
+        <div id="result"></div>
+      </div>
+      &nbsp;
+      <div class="form-group">
+        <%= f.submit :class=>"btn btn-primary" %>
+    <%# end %>
+    </div>
+      <%#= f.submit "Post", class: "btn btn-primary" %>
       <%#= form.submit %>
     <% end %>
 <!--    <%# form.file_field :images, multiple: true %><br>-->
@@ -15,4 +28,4 @@
     <%#= form.submit  %>
   </div>
   <%#= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<%# end %>
